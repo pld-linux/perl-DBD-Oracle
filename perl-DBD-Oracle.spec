@@ -11,8 +11,8 @@ Group:		Development/Languages/Perl
 Source0:	http://www.cpan.org/modules/by-module/%{pdir}/%{pdir}-%{pnam}-%{version}.tar.gz
 # Source0-md5:	ec364509df5dfd57a4c05e2c410f358f
 BuildRequires:	rpm-perlprov >= 4.1-13
-BuildRequires:	perl-DBI >= 1.20
 BuildRequires:	perl-Class-Fields
+BuildRequires:	perl-DBI >= 1.20
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
@@ -29,13 +29,15 @@ DBD::Oracle - interfejs Oracle 7/8/9 do Perla 5.
 	INSTALLDIRS=vendor
 
 %{?oracledir:ORACLE_HOME="%{oracledir}"; export ORACLE_HOME}
-%{__make} OPTIMIZE="%{rpmcflags}"
+%{__make} \
+	OPTIMIZE="%{rpmcflags}"
 
 %install
 rm -rf $RPM_BUILD_ROOT
 install -d $RPM_BUILD_ROOT%{_examplesdir}/%{name}-%{version}
 
-%{__make} install DESTDIR=$RPM_BUILD_ROOT
+%{__make} install \
+	DESTDIR=$RPM_BUILD_ROOT
 
 install Oracle.ex/* $RPM_BUILD_ROOT%{_examplesdir}/%{name}-%{version}
 
@@ -45,7 +47,7 @@ rm -rf $RPM_BUILD_ROOT
 %files
 %defattr(644,root,root,755)
 %doc Changes README README.[cels]* README.help Todo
-%{_bindir}/ora_explain
+%attr(755,root,root) %{_bindir}/ora_explain
 
 %{perl_vendorarch}/%{pdir}/%{pnam}.pm
 %{perl_vendorarch}/%{pdir}/%{pnam}
