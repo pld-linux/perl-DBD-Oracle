@@ -23,7 +23,7 @@ DBD::Oracle - interfejs Oracle 7 i Oracle 8 do Perla 5.
 %setup -q -n %{pdir}-%{pnam}-%{version}
 
 %build
-perl Makefile.PL
+%{__perl} Makefile.PL
 
 %{?oracledir:ORACLE_HOME="%{oracledir}"; export ORACLE_HOME}
 %{__make} OPTIMIZE="%{rpmcflags}"
