@@ -1,6 +1,6 @@
 %include	/usr/lib/rpm/macros.perl
-%define	pdir	DBD
-%define	pnam	Oracle
+%define		pdir	DBD
+%define		pnam	Oracle
 Summary:	DBD::Oracle - an Oracle interface for Perl
 Summary(pl):	DBD::Oracle - interfejs Oracle'a dla Perla
 Name:		perl-DBD-Oracle
