@@ -25,7 +25,7 @@ DBD::Oracle - interfejs Oracle 7 i Oracle 8 do Perla 5.
 
 %build
 %{__perl} Makefile.PL \
-	INSTALLDIRS=vendor 
+	INSTALLDIRS=vendor
 
 %{?oracledir:ORACLE_HOME="%{oracledir}"; export ORACLE_HOME}
 %{__make} OPTIMIZE="%{rpmcflags}"
