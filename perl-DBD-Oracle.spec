@@ -47,8 +47,6 @@ rm -rf $RPM_BUILD_ROOT
 %doc Changes README README.[cels]* README.help Todo
 %{_bindir}/ora_explain
 
-%{perl_vendorarch}/Oraperl.pm
-%{perl_vendorarch}/oraperl.ph
 %{perl_vendorarch}/%{pdir}/%{pnam}.pm
 %{perl_vendorarch}/%{pdir}/%{pnam}
 %dir %{perl_vendorarch}/auto/%{pdir}/%{pnam}
