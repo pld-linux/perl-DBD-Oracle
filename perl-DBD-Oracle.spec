@@ -36,14 +36,12 @@ install -d $RPM_BUILD_ROOT%{_examplesdir}/%{name}-%{version}
 
 install Oracle.ex/* $RPM_BUILD_ROOT%{_examplesdir}/%{name}-%{version}
 
-gzip -9nf Changes README README.[cels]* README.help Todo
-
 %clean
 rm -rf $RPM_BUILD_ROOT
 
 %files
 %defattr(644,root,root,755)
-%doc *.gz
+%doc Changes README README.[cels]* README.help Todo
 #%{perl_sitearch}/???
 %{_mandir}/man3/*
 %{_examplesdir}/%{name}-%{version}
