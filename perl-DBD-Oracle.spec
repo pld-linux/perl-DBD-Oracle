@@ -12,13 +12,14 @@ Source0:	http://www.cpan.org/modules/by-module/%{pdir}/%{pdir}-%{pnam}-%{version
 # Source0-md5:	ec364509df5dfd57a4c05e2c410f358f
 BuildRequires:	rpm-perlprov >= 4.1-13
 BuildRequires:	perl-DBI >= 1.20
+BuildRequires:	perl-Class-Fields
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
-DBD::Oracle - an Oracle 7 and Oracle 8 interface for Perl 5.
+DBD::Oracle - an Oracle 7/8/9 interface for Perl 5.
 
 %description -l pl
-DBD::Oracle - interfejs Oracle 7 i Oracle 8 do Perla 5.
+DBD::Oracle - interfejs Oracle 7/8/9 do Perla 5.
 
 %prep
 %setup -q -n %{pdir}-%{pnam}-%{version}
@@ -44,6 +45,17 @@ rm -rf $RPM_BUILD_ROOT
 %files
 %defattr(644,root,root,755)
 %doc Changes README README.[cels]* README.help Todo
-#%%{perl_vendorarch}/???
+%{_bindir}/ora_explain
+
+%{perl_vendorarch}/Oraperl.pm
+%{perl_vendorarch}/oraperl.ph
+%{perl_vendorarch}/%{pdir}/%{pnam}.pm
+%{perl_vendorarch}/%{pdir}/%{pnam}
+%dir %{perl_vendorarch}/auto/%{pdir}/%{pnam}
+%attr(755,root,root) %{perl_vendorarch}/auto/%{pdir}/%{pnam}/%{pnam}.so
+%{perl_vendorarch}/auto/%{pdir}/%{pnam}/%{pnam}.bs
+%{perl_vendorarch}/auto/%{pdir}/%{pnam}/%{pnam}.h
+
+%{_mandir}/man1/ora_explain.1*
 %{_mandir}/man3/*
 %{_examplesdir}/%{name}-%{version}
