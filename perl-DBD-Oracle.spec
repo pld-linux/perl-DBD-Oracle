@@ -42,6 +42,6 @@ rm -rf $RPM_BUILD_ROOT
 %files
 %defattr(644,root,root,755)
 %doc Changes README README.[cels]* README.help Todo
-#%{perl_sitearch}/???
+#%%{perl_sitearch}/???
 %{_mandir}/man3/*
 %{_examplesdir}/%{name}-%{version}
