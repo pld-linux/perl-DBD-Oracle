@@ -5,11 +5,11 @@ Summary:	DBD::Oracle perl module
 Summary(pl):	Modu³ perla DBD::Oracle
 Name:		perl-DBD-Oracle
 Version:	1.12
-Release:	1
+Release:	2
 License:	GPL
 Group:		Development/Languages/Perl
 Source0:	http://www.cpan.org/modules/by-module/%{pdir}/%{pdir}-%{pnam}-%{version}.tar.gz
-BuildRequires:	rpm-perlprov >= 3.0.3-16
+BuildRequires:	rpm-perlprov >= 4.1-13
 BuildRequires:	perl-DBI >= 1.20
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
@@ -23,7 +23,8 @@ DBD::Oracle - interfejs Oracle 7 i Oracle 8 do Perla 5.
 %setup -q -n %{pdir}-%{pnam}-%{version}
 
 %build
-%{__perl} Makefile.PL
+%{__perl} Makefile.PL \
+	INSTALLDIRS=vendor 
 
 %{?oracledir:ORACLE_HOME="%{oracledir}"; export ORACLE_HOME}
 %{__make} OPTIMIZE="%{rpmcflags}"
@@ -42,6 +43,6 @@ rm -rf $RPM_BUILD_ROOT
 %files
 %defattr(644,root,root,755)
 %doc Changes README README.[cels]* README.help Todo
-#%%{perl_sitearch}/???
+#%%{perl_vendorarch}/???
 %{_mandir}/man3/*
 %{_examplesdir}/%{name}-%{version}
