@@ -1,12 +1,12 @@
 %include	/usr/lib/rpm/macros.perl
 %define	pdir	DBD
 %define	pnam	Oracle
-Summary:	DBD::Oracle perl module
-Summary(pl):	Modu³ perla DBD::Oracle
+Summary:	DBD::Oracle - an Oracle interface for Perl
+Summary(pl):	DBD::Oracle - interfejs Oracle'a dla Perla
 Name:		perl-DBD-Oracle
 Version:	1.15
 Release:	1
-License:	GPL
+License:	GPL or Artistic
 Group:		Development/Languages/Perl
 Source0:	http://www.cpan.org/modules/by-module/%{pdir}/%{pdir}-%{pnam}-%{version}.tar.gz
 # Source0-md5:	a8f161fc7e0431bc24598c7f7167c6ea
@@ -16,10 +16,12 @@ BuildRequires:	perl-DBI >= 1.20
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
-DBD::Oracle - an Oracle 7/8/9 interface for Perl 5.
+DBD::Oracle is a Perl module which works with the DBI module to
+provide access to Oracle 7/8/9 databases.
 
 %description -l pl
-DBD::Oracle - interfejs Oracle 7/8/9 do Perla 5.
+DBD::Oracle jest modu³em Perla umo¿liwiaj±cym dostêp do baz Oracle'a
+7/8/9 za po¶rednictwem modu³u DBI.
 
 %prep
 %setup -q -n %{pdir}-%{pnam}-%{version}
