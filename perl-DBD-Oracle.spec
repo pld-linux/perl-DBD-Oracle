@@ -5,7 +5,7 @@ Summary:	DBD::Oracle perl module
 Summary(pl):	Modu³ perla DBD::Oracle
 Name:		perl-DBD-Oracle
 Version:	1.14
-Release:	2
+Release:	1
 License:	GPL
 Group:		Development/Languages/Perl
 Source0:	http://www.cpan.org/modules/by-module/%{pdir}/%{pdir}-%{pnam}-%{version}.tar.gz
