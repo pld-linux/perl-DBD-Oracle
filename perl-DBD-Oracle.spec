@@ -4,12 +4,12 @@
 Summary:	DBD::Oracle - an Oracle interface for Perl
 Summary(pl):	DBD::Oracle - interfejs Oracle'a dla Perla
 Name:		perl-DBD-Oracle
-Version:	1.15
+Version:	1.16
 Release:	1
 License:	GPL or Artistic
 Group:		Development/Languages/Perl
 Source0:	http://www.cpan.org/modules/by-module/%{pdir}/%{pdir}-%{pnam}-%{version}.tar.gz
-# Source0-md5:	a8f161fc7e0431bc24598c7f7167c6ea
+# Source0-md5:	9711550ed0ebfc743920a6a357ed717c
 BuildRequires:	rpm-perlprov >= 4.1-13
 BuildRequires:	perl-Class-Fields
 BuildRequires:	perl-DBI >= 1.20
@@ -31,6 +31,7 @@ DBD::Oracle jest modu³em Perla umo¿liwiaj±cym dostêp do baz Oracle'a
 	INSTALLDIRS=vendor
 
 %{?oracledir:ORACLE_HOME="%{oracledir}"; export ORACLE_HOME}
+#" vim
 %{__make} \
 	OPTIMIZE="%{rpmcflags}"
 
