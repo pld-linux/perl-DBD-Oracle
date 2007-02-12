@@ -2,7 +2,7 @@
 %define		pdir	DBD
 %define		pnam	Oracle
 Summary:	DBD::Oracle - an Oracle interface for Perl
-Summary(pl):	DBD::Oracle - interfejs Oracle'a dla Perla
+Summary(pl.UTF-8):   DBD::Oracle - interfejs Oracle'a dla Perla
 Name:		perl-DBD-Oracle
 Version:	1.16
 Release:	1
@@ -19,9 +19,9 @@ BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 DBD::Oracle is a Perl module which works with the DBI module to
 provide access to Oracle 7/8/9 databases.
 
-%description -l pl
-DBD::Oracle jest modu≥em Perla umoøliwiaj±cym dostÍp do baz Oracle'a
-7/8/9 za po∂rednictwem modu≥u DBI.
+%description -l pl.UTF-8
+DBD::Oracle jest modu≈Çem Perla umo≈ºliwiajƒÖcym dostƒôp do baz Oracle'a
+7/8/9 za po≈õrednictwem modu≈Çu DBI.
 
 %prep
 %setup -q -n %{pdir}-%{pnam}-%{version}
