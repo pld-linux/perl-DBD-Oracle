@@ -2,7 +2,7 @@
 %define		pdir	DBD
 %define		pnam	Oracle
 Summary:	DBD::Oracle - an Oracle interface for Perl
-Summary(pl.UTF-8):   DBD::Oracle - interfejs Oracle'a dla Perla
+Summary(pl.UTF-8):	DBD::Oracle - interfejs Oracle'a dla Perla
 Name:		perl-DBD-Oracle
 Version:	1.16
 Release:	1
