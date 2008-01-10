@@ -33,6 +33,7 @@ DBD::Oracle jest modułem Perla umożliwiającym dostęp do baz Oracle'a
 %{?oracledir:ORACLE_HOME="%{oracledir}"; export ORACLE_HOME}
 #" vim
 %{__make} \
+	CC="%{__cc}" \
 	OPTIMIZE="%{rpmcflags}"
 
 %install
