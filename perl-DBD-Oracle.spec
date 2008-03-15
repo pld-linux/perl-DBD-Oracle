@@ -6,13 +6,15 @@ Summary(pl.UTF-8):	DBD::Oracle - interfejs Oracle'a dla Perla
 Name:		perl-DBD-Oracle
 Version:	1.16
 Release:	1
-License:	GPL or Artistic
+# same as perl 5
+License:	GPL v1+ or Artistic
 Group:		Development/Languages/Perl
-Source0:	http://www.cpan.org/modules/by-module/%{pdir}/%{pdir}-%{pnam}-%{version}.tar.gz
+Source0:	http://www.cpan.org/modules/by-module/DBD/%{pdir}-%{pnam}-%{version}.tar.gz
 # Source0-md5:	9711550ed0ebfc743920a6a357ed717c
-BuildRequires:	rpm-perlprov >= 4.1-13
+URL:		http://search.cpan.org/dist/DBD-Oracle/
 BuildRequires:	perl-Class-Fields
 BuildRequires:	perl-DBI >= 1.20
+BuildRequires:	rpm-perlprov >= 4.1-13
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
@@ -52,14 +54,12 @@ rm -rf $RPM_BUILD_ROOT
 %defattr(644,root,root,755)
 %doc Changes README README.[cels]* README.help Todo
 %attr(755,root,root) %{_bindir}/ora_explain
-
-%{perl_vendorarch}/%{pdir}/%{pnam}.pm
-%{perl_vendorarch}/%{pdir}/%{pnam}
-%dir %{perl_vendorarch}/auto/%{pdir}/%{pnam}
-%attr(755,root,root) %{perl_vendorarch}/auto/%{pdir}/%{pnam}/%{pnam}.so
-%{perl_vendorarch}/auto/%{pdir}/%{pnam}/%{pnam}.bs
-%{perl_vendorarch}/auto/%{pdir}/%{pnam}/%{pnam}.h
-
+%{perl_vendorarch}/DBD/Oracle.pm
+%{perl_vendorarch}/DBD/Oracle
+%dir %{perl_vendorarch}/auto/DBD/Oracle
+%attr(755,root,root) %{perl_vendorarch}/auto/DBD/Oracle/Oracle.so
+%{perl_vendorarch}/auto/DBD/Oracle/Oracle.bs
+%{perl_vendorarch}/auto/DBD/Oracle/Oracle.h
 %{_mandir}/man1/ora_explain.1*
 %{_mandir}/man3/*
 %{_examplesdir}/%{name}-%{version}
