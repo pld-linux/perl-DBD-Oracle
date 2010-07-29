@@ -17,6 +17,8 @@ BuildRequires:	perl-DBI >= 1.20
 BuildRequires:	rpm-perlprov >= 4.1-13
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
+%define _preserve_env %_preserve_env_base ORACLE_HOME
+
 %description
 DBD::Oracle is a Perl module which works with the DBI module to
 provide access to Oracle 7/8/9 databases.
