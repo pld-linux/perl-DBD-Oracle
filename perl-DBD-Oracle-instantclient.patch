@@ -1,5 +1,13 @@
 --- DBD-Oracle-1.24/Makefile.PL.orig	2010-05-26 14:04:16.000000000 +0200
 +++ DBD-Oracle-1.24/Makefile.PL	2010-09-10 18:14:34.000000000 +0200
+@@ -1442,6 +1442,7 @@
+        # --- Oracle SDK Instant Client locations
+        "$OH/sdk/include",
+        # --- Oracle RPM Instant Client locations
++       "/usr/include/oracle/client", # Instant Client for PLD
+        "/usr/include/oracle/$client_version_full/client", # Instant Client for RedHat FC4
+        "/usr/include/oracle/$client_version_trim/client", # Instant Client for RedHat FC4
+        "/include/oracle/$client_version_full/client", # Instant Client for RedHat FC3
 @@ -1572,6 +1572,11 @@
  	    print $_;
  	}

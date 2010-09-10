@@ -15,7 +15,6 @@ License:	GPL v1+ or Artistic
 Group:		Development/Languages/Perl
 Source0:	http://www.cpan.org/modules/by-module/DBD/%{pdir}-%{pnam}-%{version}b.tar.gz
 # Source0-md5:	f3855675d6ebfccce3113dc838110520
-# http://duberga.net/dbd_oracle_instantclient_linux/Makefile-instantclient.PL
 Patch0:		%{name}-instantclient.patch
 URL:		http://search.cpan.org/dist/DBD-Oracle/
 %{?with_instantclient:BuildRequires:	oracle-instantclient-devel}
