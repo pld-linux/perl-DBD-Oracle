@@ -1,0 +1,14 @@
+--- DBD-Oracle-1.24/Makefile.PL.orig	2010-05-26 14:04:16.000000000 +0200
++++ DBD-Oracle-1.24/Makefile.PL	2010-09-10 18:14:34.000000000 +0200
+@@ -1572,6 +1572,11 @@
+ 	    print $_;
+ 	}
+     }
++    if (!$client_version_full && open INST, "oracle-instantclient-config --version |") {
++	$client_version_full = <INST>;
++	chomp $client_version_full;
++	close INST;
++    }
+     if (!$client_version_full) {
+ 	print "I'm having trouble finding your Oracle version number... trying harder\n"
+ 	    unless $force_version;
