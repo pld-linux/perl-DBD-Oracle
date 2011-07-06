@@ -8,13 +8,13 @@
 Summary:	DBD::Oracle - an Oracle interface for Perl
 Summary(pl.UTF-8):	DBD::Oracle - interfejs Oracle'a dla Perla
 Name:		perl-DBD-Oracle
-Version:	1.24
+Version:	1.28
 Release:	1
 # same as perl 5
 License:	GPL v1+ or Artistic
 Group:		Development/Languages/Perl
-Source0:	http://www.cpan.org/modules/by-module/DBD/%{pdir}-%{pnam}-%{version}b.tar.gz
-# Source0-md5:	f3855675d6ebfccce3113dc838110520
+Source0:	http://www.cpan.org/modules/by-module/DBD/%{pdir}-%{pnam}-%{version}.tar.gz
+# Source0-md5:	1279e3820fb6b52488453cb3c716a2a5
 Patch0:		%{name}-instantclient.patch
 URL:		http://search.cpan.org/dist/DBD-Oracle/
 %{?with_instantclient:BuildRequires:	oracle-instantclient-devel}
