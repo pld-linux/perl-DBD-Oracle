@@ -5,9 +5,9 @@
         "$OH/sdk/include",
         # --- Oracle RPM Instant Client locations
 +       "/usr/include/oracle/client", # Instant Client for PLD
-        "/usr/include/oracle/$client_version_full/client", # Instant Client for RedHat FC4
-        "/usr/include/oracle/$client_version_trim/client", # Instant Client for RedHat FC4
-        "/include/oracle/$client_version_full/client", # Instant Client for RedHat FC3
+        map { ( $_, $_."64"   ) }
+        map { ( $_, "/usr$_" ) }
+        map { "/include/oracle/$_/client" }
 @@ -1572,6 +1572,11 @@
  	    print $_;
  	}

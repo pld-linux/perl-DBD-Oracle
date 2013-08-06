@@ -8,13 +8,13 @@
 Summary:	DBD::Oracle - an Oracle interface for Perl
 Summary(pl.UTF-8):	DBD::Oracle - interfejs Oracle'a dla Perla
 Name:		perl-DBD-Oracle
-Version:	1.28
+Version:	1.64
 Release:	1
 # same as perl 5
 License:	GPL v1+ or Artistic
 Group:		Development/Languages/Perl
 Source0:	http://www.cpan.org/modules/by-module/DBD/%{pdir}-%{pnam}-%{version}.tar.gz
-# Source0-md5:	1279e3820fb6b52488453cb3c716a2a5
+# Source0-md5:	dad5ae20cbe8454dbce49e0fd89881fe
 Patch0:		%{name}-instantclient.patch
 URL:		http://search.cpan.org/dist/DBD-Oracle/
 %{?with_instantclient:BuildRequires:	oracle-instantclient-devel}
@@ -58,10 +58,8 @@ install -d $RPM_BUILD_ROOT%{_examplesdir}/%{name}-%{version}
 %{__make} install \
 	DESTDIR=$RPM_BUILD_ROOT
 
-install -p Oracle.ex/* $RPM_BUILD_ROOT%{_examplesdir}/%{name}-%{version}
+install -p examples/* $RPM_BUILD_ROOT%{_examplesdir}/%{name}-%{version}
 
-# those are needed to run oraperl scripts for perl4
-rm $RPM_BUILD_ROOT%{perl_vendorarch}/{Oraperl.pm,oraperl.ph}
 # makefile defs
 rm $RPM_BUILD_ROOT%{perl_vendorarch}/auto/DBD/Oracle/mk.pm
 
@@ -70,8 +68,7 @@ rm -rf $RPM_BUILD_ROOT
 
 %files
 %defattr(644,root,root,755)
-%doc Changes README README.[cels]* README.help.txt Todo
-%attr(755,root,root) %{_bindir}/ora_explain
+%doc Changes README* Todo
 %{perl_vendorarch}/DBD/Oracle.pm
 %{perl_vendorarch}/DBD/Oracle
 %dir %{perl_vendorarch}/auto/DBD/Oracle
@@ -80,6 +77,5 @@ rm -rf $RPM_BUILD_ROOT
 %{perl_vendorarch}/auto/DBD/Oracle/Oracle.h
 %{perl_vendorarch}/auto/DBD/Oracle/dbdimp.h
 %{perl_vendorarch}/auto/DBD/Oracle/ocitrace.h
-%{_mandir}/man1/ora_explain.1*
 %{_mandir}/man3/*
 %{_examplesdir}/%{name}-%{version}
