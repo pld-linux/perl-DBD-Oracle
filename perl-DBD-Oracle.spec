@@ -73,7 +73,6 @@ rm -rf $RPM_BUILD_ROOT
 %{perl_vendorarch}/DBD/Oracle
 %dir %{perl_vendorarch}/auto/DBD/Oracle
 %attr(755,root,root) %{perl_vendorarch}/auto/DBD/Oracle/Oracle.so
-%{perl_vendorarch}/auto/DBD/Oracle/Oracle.bs
 %{perl_vendorarch}/auto/DBD/Oracle/Oracle.h
 %{perl_vendorarch}/auto/DBD/Oracle/dbdimp.h
 %{perl_vendorarch}/auto/DBD/Oracle/ocitrace.h
