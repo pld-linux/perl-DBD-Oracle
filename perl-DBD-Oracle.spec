@@ -2,7 +2,6 @@
 # Conditional build:
 %bcond_with	instantclient		# build with instant-client-devel
 #
-%include	/usr/lib/rpm/macros.perl
 %define		pdir	DBD
 %define		pnam	Oracle
 Summary:	DBD::Oracle - an Oracle interface for Perl
